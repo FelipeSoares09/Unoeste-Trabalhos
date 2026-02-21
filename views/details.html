@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Detalhes do Curso - EducaJF</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="/images/Logo.jpg" alt="Logo EducaJF" class="logo-img">
+            <span class="brand-name">EducaJF</span>
+        </div>
+        <a href="/" class="btn-ja-aluno">Voltar</a>
+    </nav>
+
+    <main class="detalhes-container">
+    <div class="detalhes-flex">
+        <section class="detalhes-info">
+            <div class="detalhes-imagem-container">
+                <img src="/images/Primeiros socorros.jpeg" alt="Capa Primeiros Socorros" class="img-detalhe">
+            </div>
+
+            <h1>Primeiros Socorros Profissional</h1>
+            <p class="description">
+                Este curso oferece treinamento prático e teórico sobre como agir em situações de emergência, 
+                desde engasgos até suporte básico de vida. Essencial para leigos e profissionais da saúde.
+            </p>
+            
+            <hr style="margin: 20px 0; opacity: 0.2;">
+            
+            <ul>
+                <li><i class="fas fa-chalkboard-teacher"></i> <strong>Instrutor:</strong> Dr. Carlos Mendes</li>
+                <li><i class="fas fa-clock"></i> <strong>Carga Horária:</strong> 40 horas</li>
+                <li><i class="fas fa-layer-group"></i> <strong>Nível:</strong> Iniciante / Intermediário</li>
+                <li><i class="fas fa-users"></i> <strong>Vagas Disponíveis:</strong> 15</li>
+            </ul>
+        </section>
+
+        <aside class="detalhes-sidebar">
+            <h3>Inscrição no Pacote</h3>
+            <p>Preço unitário: <span style="color: #218c74; font-weight: bold;">R$ <span id="preco-unitario">199.00</span></span></p>
+            
+            <div class="form-group" style="margin: 20px 0;">
+                <label for="qtd-vagas">Selecione a quantidade de vagas:</label>
+                <input type="number" id="qtd-vagas" value="1" min="1" max="15" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ddd;">
+            </div>
+
+            <div class="total-box">
+                <p>Valor Total:</p>
+                <span>R$ <span id="valor-total">199.00</span></span>
+            </div>
+
+            <button class="btn-inscreva" style="width: 100%; margin-top: 20px;">Confirmar Inscrição</button>
+        </aside>
+    </div>
+</main>
+
+    <script>
+        const inputVagas = document.getElementById('qtd-vagas');
+        const precoUnitario = parseFloat(document.getElementById('preco-unitario').innerText);
+        const campoTotal = document.getElementById('valor-total');
+
+        inputVagas.addEventListener('input', () => {
+            let quantidade = parseInt(inputVagas.value);
+            
+          
+            if (quantidade < 1 || isNaN(quantidade)) {
+                quantidade = 1;
+                inputVagas.value = 1;
+            }
+
+            const total = (quantidade * precoUnitario).toFixed(2);
+            campoTotal.innerText = total.replace('.', ',');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>EducaJF - Login</title>
+</head>
+<body class="login-page">
+    <main class="login-container">
+        <div class="login-box">
+            <img src="/images/Logo.jpg" alt="Logo" class="logo-img">
+            <h2>Área do Aluno</h2>
+            <p>Acesse com suas credenciais fixas</p>
+            
+            <form action="/login" method="POST">
+                <input type="text" name="usuario" placeholder="Usuário (admin)" required>
+                <input type="password" name="senha" placeholder="Senha (123)" required>
+                <button type="submit" class="btn-inscreva" style="width: 100%;">Entrar</button>
+            </form>
+            
+            <a href="/" style="display: block; margin-top: 15px; color: #666;">Voltar para Home</a>
+        </div>
+    </main>
+</body>
+</html>
