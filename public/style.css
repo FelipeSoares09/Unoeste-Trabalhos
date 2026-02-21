@@ -1,6 +1,3 @@
-/* ==========================================================================
-   1. CONFIGURAÇÕES GLOBAIS E RESET
-   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +6,7 @@
 }
 
 body {
-    background-color: #f0f4f0; /* Fundo levemente esverdeado */
+    background-color: #f0f4f0;
     color: #2d3436;
     line-height: 1.6;
     min-height: 100vh;
@@ -18,16 +15,13 @@ body {
 }
 
 main {
-    flex: 1; /* Garante que o footer fique no rodapé em páginas curtas */
+    flex: 1;
 }
 
 a {
     text-decoration: none;
 }
 
-/* ==========================================================================
-   2. NAVEGAÇÃO (NAVBAR)
-   ========================================================================== */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -63,7 +57,6 @@ a {
     gap: 15px;
 }
 
-/* Botões da Navbar */
 .btn-ja-aluno {
     background-color: transparent;
     color: #218c74;
@@ -100,9 +93,6 @@ a {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* ==========================================================================
-   3. HERO SECTION E ESTATÍSTICAS (HOME)
-   ========================================================================== */
 header {
     background: linear-gradient(135deg, #6ab04c 0%, #218c74 100%);
     color: white;
@@ -161,9 +151,6 @@ header h2 {
     background-color: #eee;
 }
 
-/* ==========================================================================
-   4. GRID DE CURSOS (HOME)
-   ========================================================================== */
 .title {
     text-align: center;
     margin: 60px auto 20px;
@@ -239,9 +226,6 @@ header h2 {
     color: white;
 }
 
-/* ==========================================================================
-   5. PÁGINA DE DETALHES E LOGIN (REQUISITOS 2 E 3)
-   ========================================================================== */
 .detalhes-container, .login-container {
     max-width: 1000px;
     margin: 50px auto;
@@ -260,7 +244,6 @@ header h2 {
 .detalhes-info { flex: 2; }
 .detalhes-sidebar { flex: 1; background: #f9f9f9; padding: 25px; border-radius: 10px; }
 
-/* Formulário de Login */
 .login-box {
     max-width: 400px;
     margin: 80px auto;
@@ -279,7 +262,6 @@ header h2 {
     border-radius: 5px;
 }
 
-/* Calculadora de Vagas */
 .total-box {
     margin-top: 20px;
     padding-top: 20px;
@@ -292,9 +274,6 @@ header h2 {
     color: #218c74;
 }
 
-/* ==========================================================================
-   6. RODAPÉ (FOOTER)
-   ========================================================================== */
 footer {
     background: #1b3022;
     color: #f0f4f0;
@@ -349,16 +328,13 @@ footer {
     opacity: 0.6;
 }
 
-/* ==========================================================================
-   7. RESPONSIVIDADE
-   ========================================================================== */
 @media (max-width: 768px) {
     header h1 { font-size: 2rem; }
     .stats-container { flex-direction: column; gap: 20px; margin-top: -20px; }
     .stat-divider { display: none; }
     .detalhes-flex { flex-direction: column; }
     .navbar { padding: 10px 20px; }
-    .brand-name { display: none; } /* Esconde o nome no mobile se necessário */
+    .brand-name { display: none; }
 }
 
 .detalhes-container {
@@ -373,7 +349,6 @@ footer {
     align-items: flex-start;
 }
 
-/* Coluna da Esquerda: Informações */
 .detalhes-info {
     flex: 2;
     background: white;
@@ -415,7 +390,6 @@ footer {
     font-size: 1.2rem;
 }
 
-/* Coluna da Direita: Card de Compra e Cálculo */
 .detalhes-sidebar {
     flex: 1;
     background: #fff;
@@ -423,7 +397,7 @@ footer {
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     position: sticky;
-    top: 100px; /* Fixa o card ao rolar a página */
+    top: 100px;
 }
 
 .detalhes-sidebar h3 {
@@ -459,7 +433,6 @@ footer {
     color: #218c74;
 }
 
-/* Ajustes de Responsividade */
 @media (max-width: 992px) {
     .detalhes-flex {
         flex-direction: column;
@@ -471,10 +444,9 @@ footer {
     }
 }
 
-/* Container da imagem na página de detalhes */
 .detalhes-imagem-container {
     width: 100%;
-    height: 350px; /* Altura fixa para manter o padrão */
+    height: 350px;
     margin-bottom: 30px;
     overflow: hidden;
     border-radius: 12px;
@@ -484,17 +456,16 @@ footer {
 .img-detalhe {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+    object-fit: cover;
     transition: transform 0.5s ease;
 }
 
 .img-detalhe:hover {
-    transform: scale(1.05); /* Efeito de zoom suave ao passar o mouse */
+    transform: scale(1.05);
 }
 
-/* Ajuste para telas menores */
 @media (max-width: 768px) {
     .detalhes-imagem-container {
-        height: 200px; /* Diminui a altura no celular */
+        height: 200px;
     }
 }
