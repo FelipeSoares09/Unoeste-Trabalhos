@@ -18,7 +18,6 @@ const autenticar = (req, res, next) => {
     res.redirect('/login');
 };
 
-// Rotas
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'views', 'index.html')));
 
 app.get('/login', (req, res) => res.sendFile(path.join(__dirname, 'views', 'login.html')));
@@ -37,4 +36,10 @@ app.get('/detalhes/:id', autenticar, (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'details.html')); 
 });
 
+const cursosRouter = require('./routes/cursos');
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use('/api/cursos', cursosRouter);
+
 app.listen(3000, () => console.log('Servidor rodando em http://localhost:3000'));
+
