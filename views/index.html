@@ -14,7 +14,9 @@
             <span class="brand-name">EducaJF</span>
         </div>
         <div class="nav-buttons">
-            <a href="/login"><button class="btn-ja-aluno">Já sou aluno</button></a>
+            <a href="/login" id="linkEntrar"><button class="btn-ja-aluno">Entrar</button></a>
+            <a href="/admin/cursos" id="linkAdmin" style="display:none"><button type="button" class="btn-ja-aluno">Gerenciar cursos</button></a>
+            <a href="/logout" id="linkSair" style="display:none"><button type="button" class="btn-ja-aluno">Sair</button></a>
             <button class="btn-inscreva">Inscreva-se</button>
         </div>
     </nav>
@@ -116,5 +118,16 @@
             <p>&copy; 2026 EducaJF Brasil - Todos os direitos reservados.</p>
         </div>
     </footer>
+    <script>
+        fetch('/api/session').then(function (r) { return r.json(); }).then(function (s) {
+            if (s.autenticado) {
+                document.getElementById('linkEntrar').style.display = 'none';
+                document.getElementById('linkSair').style.display = 'inline-block';
+                if (s.papel === 'admin') {
+                    document.getElementById('linkAdmin').style.display = 'inline-block';
+                }
+            }
+        });
+    </script>
 </body>
 </html>
